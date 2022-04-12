@@ -9,7 +9,7 @@
                 <div class = "forms card">
                     <h3>Task 14 - Image Upload</h3>
                     <hr>
-         <cfform action=" " method="post" enctype="multipart/form-data">
+         <cfform action="infoAction.cfm" method="post" enctype="multipart/form-data">
        
          <div class="form-group">
            <div class="form-control">
@@ -18,7 +18,7 @@
     
             <label >Description </label>
             <textarea name="description" style="margin-top:5px;"> </textarea> <br/>
-		Please upload an image: <cfinput type="file" name="image">
+		Please upload an image: <cfinput type="file" name="img_file">
         </div>
         </div>
 <cfinput type="submit" class="common-btn" value="Send Image" name="form_submit">
@@ -29,15 +29,8 @@
         </section>
     </body>
 </html>
+    <table>
 
-
-<cfif structKeyExists(form, "form_submit")>
-
-        <cfinvoke component="components.task1"  method="image_upload" returnvariable="process">
-        <cfoutput>  
-            insert
-        </cfoutput>
-    </cfif>
 
 
 
