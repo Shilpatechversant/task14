@@ -17,10 +17,7 @@
                                 <cfset errors="Invalid Image!
 											<br />">
                                     <!--- clean up --->
-                                    <cffile action="delete" file="#path#">
-                                        <!---<cfimage action="read" source="#fileUpload.serverfile#" name="myImage"><cfoutput>#ImageGetHeight(myImage)# </cfoutput><cfif ImageGetHeight(myImage) gt 2000 or ImageGetWidth(myImage) gt 2000>
-#Width and height not in format#
-</cfif>--->
+                                    <cffile action="delete" file="#path#">                      
                                         <cfelseif fileupload.filesize gt 1000000>
                                             <cfoutput> File larger than 1MB.Upload image size lesse than 1MB </cfoutput>
                                             <cfelse>
@@ -34,8 +31,7 @@
                                                                         <p>
                                                                             <cfimage source="#newImageName#" action="writeToBrowser">
                                                                     </div>
-                                                                </cfoutput>
-                            </cfif>
+                                                                </cfoutput></cfif>
                     </cfif>
             </cfif>
             <div class="col-md-12">
@@ -56,9 +52,7 @@
                                         <td>
                                             <a href='list.cfm?img_id=#id#'>
                                                 <cfimage source="#thumbail_path#" action="writeToBrowser">
-                                            </a>
-                                   </td>
-                        </tr>
+                                            </a></td></tr>
                     </cfoutput>
                 </table>
             </div>
